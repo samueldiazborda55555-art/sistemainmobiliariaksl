@@ -1,0 +1,209 @@
+/* Layout Principal */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #2b303a; /* Fondo exterior */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Tarjeta Contenedora */
+.login-card {
+  display: flex;
+  width: 850px;
+  max-width: 100%;
+  min-height: 500px;
+  background-color: #f6f3eb; /* Fondo crema/beige claro del mockup */
+  border-radius: 2px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  border: 1px solid #111;
+}
+
+/* LADO IZQUIERDO: Imagen y Texto */
+.login-image {
+  flex: 1;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.15) 60%),
+              url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
+  display: flex;
+  align-items: flex-end;
+  padding: 35px;
+  box-sizing: border-box;
+}
+
+.image-content p {
+  color: #c0a062; /* Dorado */
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin: 0 0 6px 0;
+  text-transform: uppercase;
+}
+
+.image-content h2 {
+  color: #ffffff;
+  font-family: 'Georgia', serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.25;
+}
+
+/* LADO DERECHO: Formulario */
+.login-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 35px 45px;
+  box-sizing: border-box;
+}
+
+.login-content {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1b263b;
+}
+
+.logo-icon {
+  color: #c0a062;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.logo .premium {
+  color: #c0a062; /* Dorado */
+  font-weight: 400;
+  margin-left: 3px;
+}
+
+/* TÍTULOS */
+.login-content h1 {
+  font-family: 'Georgia', serif;
+  font-size: 1.4rem;
+  color: #1b263b;
+  margin: 0 0 4px 0;
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 0.75rem;
+  color: #718096;
+  margin: 0 0 20px 0;
+}
+
+/* INPUTS */
+.form-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.form-group label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #4a5568;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 3px;
+  background-color: #ebe7de; /* Fondo levemente oscuro del input */
+  font-size: 0.8rem;
+  color: #2d3748;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  border-color: #c0a062;
+}
+
+/* OLVIDASTE CONTRASEÑA */
+.forgot {
+  width: 100%;
+  text-align: right;
+  margin-top: -4px;
+  margin-bottom: 16px;
+}
+
+.forgot a {
+  font-size: 0.65rem;
+  color: #a0aec0;
+  text-decoration: none;
+}
+
+/* BOTÓN */
+.login-button {
+  width: 100%;
+  padding: 9px;
+  background-color: #1b263b; /* Azul marino */
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.login-button:hover {
+  background-color: #111827;
+}
+
+/* SEPARADOR */
+.separator {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 15px 0;
+}
+
+.separator span {
+  flex: 1;
+  height: 1px;
+  background-color: #e2e8f0;
+}
+
+.separator small {
+  padding: 0 8px;
+  color: #a0aec0;
+  font-size: 0.7rem;
+}
+
+/* REGISTRO */
+.register {
+  font-size: 0.7rem;
+  color: #718096;
+  margin: 0;
+}
+
+.register a {
+  color: #c0a062;
+  text-decoration: none;
+  font-weight: 600;
+}
