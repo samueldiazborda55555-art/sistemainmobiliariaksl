@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "../App.css"; 
 
-function Login() {
+function Login({ irRegistro, iniciarSesion }) {  
+  const [correo, setCorreo] = useState("");
+  const [contraseña, setContraseña] = useState("");
   return (
+  
     <div className="login-page">
 
       <div className="login-card">
@@ -35,15 +38,19 @@ function Login() {
               <input
                 type="email"
                 placeholder="correo@gmail.com"
+                value={correo}
+                onChange={(e) => setCorreo(e.target.value)}
               />
             </div>
 
             <div className="form-group">
-              <label>Contraseña</label>
+               <label>Contraseña</label>
 
               <input
                 type="password"
                 placeholder="••••••••"
+                value={contraseña}
+                onChange={(e) => setContraseña(e.target.value)}
               />
             </div>
 
@@ -53,7 +60,10 @@ function Login() {
               </a>
             </div>
 
-            <button className="login-button">
+            <button
+              className="login-button"
+              onClick={() => iniciarSesion(correo, contraseña)}
+            >
               Iniciar sesión
             </button>
 
@@ -63,9 +73,17 @@ function Login() {
               <span></span>
             </div>
 
-            <p className="register">
+           <p className="register">
               ¿No tienes una cuenta?
-              <a href="#"> Regístrate</a>
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  irRegistro();
+                }}
+              >
+                {" "}Regístrate
+              </a>
             </p>
           </div>
         </div>
