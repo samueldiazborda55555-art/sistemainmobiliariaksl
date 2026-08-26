@@ -21,34 +21,7 @@ Características
 • Baños.
 • Garajes.
 
-Descripción
-• Descripción general del inmueble.*/<<<<<<< Updated upstream
-=======
-//SARA
-
-// MODULO 3 REGISTRO DE INMUEBLE -- CUANDO INICIE SESION LA INMOBILIARIA
-// Módulo 3 – Registro de inmueble
-/*La inmobiliaria deberá poder registrar una
-propiedad. El formulario debe incluir:
-Información básica
-• Fotografía.
-• Código del inmueble.
-• Tipo de inmueble.
-• Dirección.
-• Ciudad.
-• Barrio.
-Información comercial
-• Tipo de operación.
-• Precio.
-• Estado del inmueble.
-Características
-• Área.
-• Habitaciones.
-• Baños.
-• Garajes.
-
-Descripción
-• Descripción general del inmueble.*/
+.*/
 
 import { useState } from "react";
 import "./App.css";
@@ -152,7 +125,7 @@ function RegistroInmueble({
 
         <div>
           <span className="registro-label">
-            GESTIÓN DE INMUEBLES
+            GESTIÓN DE INMUEBLES 2026
           </span>
 
           <h1>Registrar inmueble</h1>
@@ -618,4 +591,4 @@ function RegistroInmueble({
 }
 
 export default RegistroInmueble;
->>>>>>> Stashed changes
+
