@@ -1,4 +1,3 @@
-
 /* ========================================
    CONFIGURACIÓN GENERAL
 ======================================== */
@@ -630,3 +629,2586 @@ body,
   }
 }
 
+/* =========================================
+   PANEL DE ADMINISTRACIÓN
+   ========================================= */
+
+.admin-panel {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #f5f3ed;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1f2937;
+}
+
+
+/* =========================================
+   BARRA LATERAL
+   ========================================= */
+
+.admin-sidebar {
+  width: 220px;
+  min-height: 100vh;
+  background-color: #172b4d;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+
+  box-sizing: border-box;
+}
+
+
+/* LOGO */
+
+.admin-logo {
+  height: 62px;
+  padding: 0 18px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo-cuadro {
+  width: 30px;
+  height: 30px;
+
+  background-color: #d6aa36;
+  color: #172b4d;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 2px;
+
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.admin-logo span {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+
+/* =========================================
+   MENÚ
+   ========================================= */
+
+.admin-sidebar nav {
+  display: flex;
+  flex-direction: column;
+
+  padding: 16px 10px;
+  gap: 5px;
+}
+
+.admin-sidebar nav button {
+  width: 100%;
+
+  border: none;
+  background: transparent;
+
+  color: #d8deea;
+
+  text-align: left;
+
+  padding: 11px 13px;
+
+  border-radius: 4px;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.admin-sidebar nav button:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+
+/* BOTÓN ACTIVO */
+
+.admin-sidebar nav .menu-activo {
+  background-color: #304667;
+  color: white;
+}
+
+
+/* =========================================
+   CERRAR SESIÓN
+   ========================================= */
+
+.cerrar-sesion {
+  margin-top: auto;
+
+  width: 100%;
+
+  padding: 17px 20px;
+
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  background: transparent;
+
+  color: #d8deea;
+
+  text-align: left;
+
+  font-size: 13px;
+
+  cursor: pointer;
+}
+
+.cerrar-sesion:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+
+/* =========================================
+   CONTENIDO PRINCIPAL
+   ========================================= */
+
+.admin-content {
+  flex: 1;
+
+  padding: 25px 28px;
+
+  box-sizing: border-box;
+
+  overflow-x: auto;
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.admin-header {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 24px;
+}
+
+.admin-subtitulo {
+  display: block;
+
+  margin-bottom: 6px;
+
+  font-size: 9px;
+
+  letter-spacing: 1px;
+
+  color: #8b8b83;
+}
+
+.admin-header h1 {
+  margin: 0;
+
+  color: #202938;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 23px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================
+   BOTÓN AGREGAR
+   ========================================= */
+
+.btn-agregar {
+  border: none;
+
+  background-color: #d5a82f;
+
+  color: #ffffff;
+
+  padding: 9px 18px;
+
+  border-radius: 4px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+
+  transition: 0.2s;
+}
+
+.btn-agregar:hover {
+  background-color: #bd9225;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================
+   ESTADÍSTICAS
+   ========================================= */
+
+.estadisticas {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 16px;
+
+  margin-bottom: 20px;
+}
+
+.estadistica {
+  min-height: 74px;
+
+  padding: 16px;
+
+  background-color: #ffffff;
+
+  border: 1px solid #e5e3dc;
+
+  border-radius: 5px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.estadistica span {
+  font-size: 9px;
+
+  letter-spacing: 1px;
+
+  color: #92928b;
+
+  font-weight: 500;
+}
+
+.estadistica strong {
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 25px;
+
+  font-weight: 500;
+
+  color: #252c38;
+}
+
+
+/* =========================================
+   TABLA
+   ========================================= */
+
+.tabla-inmuebles {
+  width: 100%;
+
+  background-color: #ffffff;
+
+  border: 1px solid #e1dfd8;
+
+  border-radius: 5px;
+
+  overflow: hidden;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+}
+
+
+/* CABECERA DE TABLA */
+
+.tabla-header {
+  min-height: 40px;
+
+  display: grid;
+
+  grid-template-columns: 2fr 1fr 1.2fr 1.1fr 0.7fr;
+
+  align-items: center;
+
+  padding: 0 14px;
+
+  box-sizing: border-box;
+
+  background-color: #eeece4;
+
+  border-bottom: 1px solid #dedbd2;
+}
+
+.tabla-header span {
+  font-size: 9px;
+
+  letter-spacing: 0.8px;
+
+  color: #77766f;
+
+  font-weight: 600;
+}
+
+
+/* =========================================
+   CUANDO NO HAY INMUEBLES
+   ========================================= */
+
+.sin-inmuebles {
+  min-height: 230px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 12px;
+
+  color: #8a8982;
+
+  text-align: center;
+}
+
+.sin-inmuebles p {
+  margin: 0;
+
+  font-size: 13px;
+}
+
+.sin-inmuebles button {
+  border: none;
+
+  background-color: #d5a82f;
+
+  color: white;
+
+  padding: 9px 16px;
+
+  border-radius: 4px;
+
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+.sin-inmuebles button:hover {
+  background-color: #bd9225;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 800px) {
+
+  .admin-sidebar {
+    width: 180px;
+  }
+
+  .admin-content {
+    padding: 20px;
+  }
+
+  .estadisticas {
+    grid-template-columns: 1fr;
+  }
+
+  .tabla-inmuebles {
+    min-width: 650px;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .admin-panel {
+    flex-direction: column;
+  }
+
+  .admin-sidebar {
+    width: 100%;
+    min-height: auto;
+  }
+
+  .admin-sidebar nav {
+    flex-direction: row;
+  }
+
+  .cerrar-sesion {
+    margin-top: 0;
+  }
+
+}
+
+/* =========================================
+   FILA DEL INMUEBLE
+   ========================================= */
+
+.tabla-inmuebles .fila-inmueble {
+  width: 100%;
+  min-height: 65px;
+
+  display: grid !important;
+
+  grid-template-columns: 2fr 1fr 1.2fr 1.1fr 0.7fr;
+
+  align-items: center;
+
+  padding: 8px 14px;
+
+  box-sizing: border-box;
+
+  background-color: #ffffff;
+
+  border-bottom: 1px solid #eeeeea;
+
+  font-size: 12px;
+
+  color: #555;
+}
+
+.tabla-inmuebles .fila-inmueble:last-child {
+  border-bottom: none;
+}
+
+
+/* =========================================
+   INFORMACIÓN DEL INMUEBLE
+   ========================================= */
+
+.tabla-inmuebles .info-inmueble {
+  display: flex !important;
+
+  flex-direction: row !important;
+
+  align-items: center;
+
+  gap: 10px;
+
+  min-width: 0;
+}
+
+
+/* =========================================
+   IMAGEN DEL INMUEBLE
+   ========================================= */
+
+.tabla-inmuebles .fila-inmueble .info-inmueble img {
+  width: 42px !important;
+
+  height: 34px !important;
+
+  min-width: 42px;
+
+  max-width: 42px;
+
+  object-fit: cover;
+
+  border-radius: 3px;
+
+  display: block;
+}
+
+
+/* =========================================
+   CUANDO NO HAY FOTO
+   ========================================= */
+
+.tabla-inmuebles .sin-foto {
+  width: 42px;
+
+  height: 34px;
+
+  min-width: 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background-color: #eeeeee;
+
+  border-radius: 3px;
+
+  font-size: 16px;
+}
+
+
+/* =========================================
+   TEXTO DEL INMUEBLE
+   ========================================= */
+
+.tabla-inmuebles .info-inmueble > div:last-child {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+
+  min-width: 0;
+}
+
+.tabla-inmuebles .info-inmueble strong {
+  font-size: 11px;
+
+  color: #454545;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+.tabla-inmuebles .info-inmueble small {
+  font-size: 9px;
+
+  color: #999;
+}
+
+
+/* =========================================
+   PRECIO
+   ========================================= */
+
+.tabla-inmuebles .fila-inmueble > strong {
+  color: #252b36;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   ESTADOS
+   ========================================= */
+
+.tabla-inmuebles .estado {
+  width: fit-content;
+
+  padding: 5px 9px;
+
+  border-radius: 12px;
+
+  font-size: 8px;
+
+  font-weight: bold;
+
+  text-transform: uppercase;
+}
+
+.tabla-inmuebles .estado.disponible {
+  background-color: #d9f5e7;
+
+  color: #29945f;
+}
+
+.tabla-inmuebles .estado.negociacion {
+  background-color: #fff0c9;
+
+  color: #a77a13;
+}
+
+
+/* =========================================
+   ACCIONES
+   ========================================= */
+
+.tabla-inmuebles .acciones {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.tabla-inmuebles .acciones button {
+  border: none;
+
+  background: transparent;
+
+  color: #777;
+
+  cursor: pointer;
+
+  font-size: 13px;
+
+  padding: 3px;
+}
+
+.tabla-inmuebles .acciones button:hover {
+  color: #b28a20;
+}
+
+
+/* ==========================================
+   PANEL DE GESTIÓN DE CITAS
+========================================== */
+
+.citas-page {
+  min-height: 100vh;
+  display: flex;
+  background: #f5f3ed;
+}
+
+
+/* ==========================================
+   SIDEBAR
+========================================== */
+
+.citas-sidebar {
+  width: 215px;
+  min-height: 100vh;
+  background: #17294d;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+
+/* ADMIN */
+
+.citas-admin {
+  height: 65px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+
+.citas-admin-icon {
+  width: 28px;
+  height: 28px;
+  background: #d8b45a;
+  color: #17294d;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* MENÚ */
+
+.citas-menu {
+  padding-top: 20px;
+}
+
+
+.citas-menu-item {
+  width: calc(100% - 25px);
+  margin-left: 12px;
+  border: none;
+  background: transparent;
+  color: rgba(255,255,255,0.65);
+  padding: 13px 14px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: left;
+}
+
+
+.citas-menu-item:hover {
+  background: rgba(255,255,255,0.08);
+  color: white;
+}
+
+
+.citas-menu-item.active {
+  background: rgba(255,255,255,0.13);
+  color: white;
+}
+
+
+.menu-icon {
+  width: 20px;
+  font-size: 16px;
+}
+
+
+/* CERRAR SESIÓN */
+
+.citas-cerrar {
+  margin-top: auto;
+  margin-bottom: 18px;
+  margin-left: 12px;
+  width: calc(100% - 25px);
+  border: none;
+  background: transparent;
+  color: rgba(255,255,255,0.75);
+  padding: 13px 14px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+  text-align: left;
+  font-size: 13px;
+}
+
+
+.citas-cerrar:hover {
+  color: white;
+}
+
+
+/* ==========================================
+   CONTENIDO
+========================================== */
+
+.citas-content {
+  margin-left: 215px;
+  width: calc(100% - 215px);
+  padding: 22px 25px;
+}
+
+
+/* HEADER */
+
+.citas-label {
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #8b8a83;
+}
+
+
+.citas-header h1 {
+  margin: 5px 0 22px;
+  font-size: 25px;
+  font-family: Georgia, serif;
+  font-weight: 500;
+  color: #262621;
+}
+
+
+/* ==========================================
+   TARJETAS
+========================================== */
+
+.citas-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+
+.cita-stat-card {
+  background: white;
+  border: 1px solid #e8e5dc;
+  border-radius: 4px;
+  padding: 18px 14px;
+  min-height: 70px;
+}
+
+
+.stat-label {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: #99978f;
+  margin-bottom: 8px;
+}
+
+
+.stat-number {
+  font-family: Georgia, serif;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+
+.pendiente-number {
+  color: #d99b43;
+}
+
+
+.confirmada-number {
+  color: #3b9c7b;
+}
+
+
+.rechazada-number {
+  color: #c66b70;
+}
+
+
+/* ==========================================
+   TABLA
+========================================== */
+
+.citas-table-container {
+  background: white;
+  border: 1px solid #e6e3da;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+
+/* FILTROS */
+
+.citas-filtros {
+  height: 53px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 14px;
+  border-bottom: 1px solid #e7e4db;
+}
+
+
+.filtro-icon {
+  color: #85847c;
+  font-size: 16px;
+  margin-right: 2px;
+}
+
+
+.filtro-btn {
+  border: 1px solid #e5e2da;
+  background: white;
+  color: #85847c;
+  border-radius: 20px;
+  padding: 7px 13px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+
+.filtro-btn:hover {
+  background: #f4f2ec;
+}
+
+
+.filtro-btn.activo {
+  background: #182b50;
+  color: white;
+  border-color: #182b50;
+}
+
+
+/* TABLA */
+
+.tabla-scroll {
+  overflow-x: auto;
+}
+
+
+.citas-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 750px;
+}
+
+
+.citas-table thead {
+  background: #f0eee6;
+}
+
+
+.citas-table th {
+  padding: 11px 14px;
+  text-align: left;
+  font-size: 9px;
+  letter-spacing: 0.8px;
+  color: #77766f;
+  font-weight: 500;
+}
+
+
+.citas-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #eeece5;
+  font-size: 12px;
+  color: #62615b;
+}
+
+
+.citas-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+.citas-table tbody tr:hover {
+  background: #faf9f5;
+}
+
+
+/* ==========================================
+   CLIENTE
+========================================== */
+
+.cliente-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+
+.cliente-info strong {
+  color: #33332f;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+
+.cliente-info small {
+  color: #99978f;
+  font-size: 9px;
+}
+
+
+/* INMUEBLE */
+
+.inmueble-cita {
+  color: #65645d;
+}
+
+
+/* HORA */
+
+.hora-cita {
+  white-space: nowrap;
+}
+
+
+/* ==========================================
+   ESTADOS
+========================================== */
+
+.estado-cita {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 8px;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+
+.estado-pendiente {
+  background: #fff0d2;
+  color: #bd812b;
+}
+
+
+.estado-confirmada {
+  background: #dff4eb;
+  color: #2e9674;
+}
+
+
+.estado-rechazada {
+  background: #f9dddd;
+  color: #c5656b;
+}
+
+
+/* ==========================================
+   ACCIONES
+========================================== */
+
+.acciones-cita {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+}
+
+
+.accion {
+  width: 25px;
+  height: 25px;
+  border: none;
+  background: transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.accion:hover {
+  background: #f0eee8;
+}
+
+
+.accion.confirmar {
+  color: #4a987d;
+}
+
+
+.accion.rechazar {
+  color: #bd6b6f;
+}
+
+
+.accion.ver {
+  color: #7d7c75;
+}
+
+
+/* ==========================================
+   SIN CITAS
+========================================== */
+
+.sin-citas {
+  text-align: center !important;
+  padding: 35px !important;
+  color: #999 !important;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 800px) {
+
+  .citas-sidebar {
+    width: 180px;
+  }
+
+  .citas-content {
+    margin-left: 180px;
+    width: calc(100% - 180px);
+    padding: 18px;
+  }
+
+  .citas-stats {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .citas-sidebar {
+    width: 65px;
+  }
+
+  .citas-admin span,
+  .citas-menu-item span:not(.menu-icon),
+  .citas-cerrar {
+    display: none;
+  }
+
+  .citas-admin {
+    justify-content: center;
+    padding: 0;
+  }
+
+  .citas-menu-item {
+    width: 45px;
+    margin-left: 10px;
+    justify-content: center;
+    padding: 12px;
+  }
+
+  .citas-content {
+    margin-left: 65px;
+    width: calc(100% - 65px);
+  }
+
+}
+
+/* Estilos para el HEADER */
+.header {
+  background-color: #1e293b;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo h2 {
+  margin: 0;
+  color: #fff;
+}
+
+.logo span {
+  color: #3b82f6; /* Azul destacativo */
+}
+
+.nav-menu a {
+  color: #e2e8f0;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-menu a:hover {
+  color: #3b82f6;
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.btn-logout {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-logout:hover {
+  background-color: #dc2626;
+}
+
+/* Estilos para el FOOTER */
+.footer {
+  background-color: #0f172a;
+  color: #94a3b8;
+  padding: 2rem 0 1rem 0;
+  margin-top: auto;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0 1rem;
+}
+
+.footer-col h3, .footer-col h4 {
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #334155;
+  margin-top: 20px;
+  padding-top: 10px;
+  font-size: 0.9rem;
+}
+
+
+
+
+
+
+
+/* =========================================
+   PANTALLA DEL CLIENTE
+   ========================================= */
+
+.layout-cliente {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f5ef;
+}
+
+.contenido-cliente {
+  flex: 1;
+  width: 100%;
+  padding: 30px 40px;
+}
+
+.contenido-cliente h2 {
+  margin: 0 0 10px;
+  color: #1e293b;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.contenido-cliente p {
+  margin-bottom: 25px;
+  color: #555;
+}
+
+/* HEADER DEL CLIENTE */
+
+.layout-cliente .header {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+/* FOOTER DEL CLIENTE */
+
+.layout-cliente .footer {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+/* =========================================
+   LOGO DEL HEADER
+   ========================================= */
+
+.header .logo {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 0;
+  font-size: initial;
+  font-weight: normal;
+}
+
+.header .logo h2 {
+  margin: 0;
+  color: #ffffff;
+}
+
+.header .logo span {
+  color: #3b82f6;
+}
+
+
+/* =========================================================
+   ESTILOS GENERALES
+   ========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background-color: #f5f3ee;
+  color: #263238;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  width: 100%;
+  max-width: 1400px;
+  height: 70px;
+  margin: 0 auto;
+  padding: 0 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo h2 {
+  color: #1d2d50;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.logo span {
+  color: #c5a449;
+}
+
+/* NAVEGACIÓN */
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #555;
+  font-size: 15px;
+  transition: 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: #b8953e;
+}
+
+/* USUARIO */
+
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-name {
+  color: #555;
+  font-size: 14px;
+}
+
+/* BOTÓN CERRAR SESIÓN */
+
+.btn-logout {
+  border: 1px solid #d7d7d7;
+  background-color: #ffffff;
+  color: #555;
+
+  padding: 9px 17px;
+  border-radius: 5px;
+
+  cursor: pointer;
+  font-size: 14px;
+
+  transition: all 0.3s ease;
+}
+
+.btn-logout:hover {
+  background-color: #1d2d50;
+  color: white;
+  border-color: #1d2d50;
+}
+
+/* =========================================================
+   CONTENEDOR PRINCIPAL
+   ========================================================= */
+
+.container {
+  width: 100%;
+  min-height: calc(100vh - 70px);
+  padding-bottom: 50px;
+  background-color: #f5f3ee;
+}
+
+/* =========================================================
+   ENCABEZADO AZUL DEL CATÁLOGO
+   ========================================================= */
+
+/*
+   Tu h2 y el div de búsqueda están actualmente
+   directamente dentro de .container.
+*/
+
+.container > h2 {
+  margin: 0;
+  padding: 38px 20px 15px;
+
+  background-color: #1d2d50;
+  color: #ffffff;
+
+  text-align: center;
+
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+/* Texto pequeño encima del título */
+
+.container > h2::before {
+  content: "CATÁLOGO DE PROPIEDADES";
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: #c5a449;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+/* =========================================================
+   BARRA DE BÚSQUEDA
+   ========================================================= */
+
+.container > div:first-of-type {
+  background-color: #1d2d50 !important;
+
+  padding: 5px 20px 40px !important;
+  margin: 0 !important;
+
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+
+  gap: 0 !important;
+}
+
+/* INPUT */
+
+.container > div:first-of-type input {
+  width: 55%;
+  height: 46px;
+
+  padding: 0 18px !important;
+
+  border: none;
+  outline: none;
+
+  background-color: #ffffff;
+
+  border-radius: 7px 0 0 7px;
+
+  color: #444;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.container > div:first-of-type input::placeholder {
+  color: #aaa;
+}
+
+/* SELECT */
+
+.container > div:first-of-type select {
+  height: 46px;
+
+  padding: 0 15px;
+
+  border: none;
+  outline: none;
+
+  background-color: #ffffff;
+
+  border-left: 1px solid #ddd;
+
+  border-radius: 0 7px 7px 0;
+
+  color: #555;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   GRID DE INMUEBLES
+   ========================================================= */
+
+.grid-container {
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 35px 30px 20px;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+/* =========================================================
+   TARJETA DE INMUEBLE
+   ========================================================= */
+
+.property-card {
+  background-color: #ffffff;
+
+  border: 1px solid #e4e1d9;
+
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.08);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.property-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.13);
+}
+
+/* =========================================================
+   IMAGEN DE LA TARJETA
+   ========================================================= */
+
+.property-card > img {
+  width: 100%;
+  height: 225px;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+/* CUANDO NO HAY FOTO */
+
+.sin-foto {
+  width: 100%;
+  height: 225px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #e9e6de;
+
+  font-size: 55px;
+}
+
+/* =========================================================
+   INFORMACIÓN DEL INMUEBLE
+   ========================================================= */
+
+.property-info {
+  padding: 15px 16px 14px;
+
+  background-color: #ffffff;
+}
+
+/* NOMBRE */
+
+.property-info h4 {
+  margin-bottom: 8px;
+
+  color: #30343b;
+
+  font-size: 17px;
+  font-weight: 700;
+}
+
+/* INFORMACIÓN */
+
+.property-info p {
+  margin: 5px 0;
+
+  color: #777;
+
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+
+  line-height: 1.4;
+}
+
+/* PRECIO */
+
+.property-info p:nth-of-type(3) {
+  margin-top: 9px;
+  margin-bottom: 9px;
+
+  color: #b8953e;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   BOTÓN VER DETALLE
+   ========================================================= */
+
+.btn-accent {
+  width: 100%;
+
+  margin-top: 12px;
+
+  padding: 10px 15px;
+
+  background-color: #ffffff;
+
+  border: 1px solid #555;
+  border-radius: 4px;
+
+  color: #444;
+
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.btn-accent:hover {
+  background-color: #1d2d50;
+
+  border-color: #1d2d50;
+
+  color: #ffffff;
+}
+
+/* =========================================================
+   MENSAJE CUANDO NO HAY INMUEBLES
+   ========================================================= */
+
+.grid-container > p {
+  grid-column: 1 / -1;
+
+  padding: 50px;
+
+  text-align: center;
+
+  color: #777;
+
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+/* =========================================================
+   RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .header-container {
+    padding: 0 20px;
+  }
+
+  .nav-menu {
+    gap: 18px;
+  }
+
+  .user-name {
+    display: none;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+    padding: 25px 20px;
+  }
+
+  .container > div:first-of-type input {
+    width: 65%;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE - CELULAR
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .header-container {
+    height: auto;
+    min-height: 70px;
+
+    padding: 12px 15px;
+
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .logo h2 {
+    font-size: 18px;
+  }
+
+  .nav-menu {
+    order: 3;
+
+    width: 100%;
+
+    justify-content: center;
+
+    gap: 20px;
+  }
+
+  .nav-menu a {
+    font-size: 13px;
+  }
+
+  .user-section {
+    margin-left: auto;
+  }
+
+  .btn-logout {
+    padding: 7px 11px;
+    font-size: 12px;
+  }
+
+  .container > h2 {
+    padding: 30px 15px 12px;
+
+    font-size: 25px;
+  }
+
+  .container > h2::before {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .container > div:first-of-type {
+    padding: 5px 15px 30px !important;
+
+    flex-direction: column;
+
+    gap: 8px !important;
+  }
+
+  .container > div:first-of-type input {
+    width: 100%;
+
+    border-radius: 7px;
+
+    height: 44px;
+  }
+
+  .container > div:first-of-type select {
+    width: 100%;
+
+    border-radius: 7px;
+
+    height: 44px;
+  }
+
+  .grid-container {
+    padding: 20px 15px;
+
+    grid-template-columns: 1fr;
+  }
+
+  .property-card > img,
+  .sin-foto {
+    height: 200px;
+  }
+
+  .property-info h4 {
+    font-size: 16px;
+  }
+}
+
+
+
+
+/* DETALLES: AREA, HABITACIONES Y BAÑOS */
+
+.property-details {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 25px;
+
+  margin: 12px 0 15px;
+
+  color: #777;
+
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+
+  text-align: center;
+}
+
+.property-details span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  white-space: nowrap;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   VARIABLES DE COLOR (FALLBACKS)
+   ========================================== */
+:root {
+  --primary-gold: #c5a059;
+  --primary-gold-hover: #b08d46;
+  --bg-card: #ffffff;
+  --bg-page: #f4f4f6;
+  --text-main: #1a1a1a;
+  --text-muted: #666666;
+  --border-color: #e0e0e0;
+}
+
+/* ==========================================
+   DETALLE DEL INMUEBLE Y ESTRUCTURA
+   ========================================== */
+
+.detalle-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background-color: var(--bg-page, #f4f4f6);
+}
+
+.btn-volver {
+  background: none;
+  border: none;
+  color: var(--text-muted, #666);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 1.2rem;
+  transition: color 0.2s ease;
+}
+
+.btn-volver:hover {
+  color: var(--gold-primary, #c5a059);
+}
+
+.detalle-imagen-container {
+  width: 100%;
+  height: 430px;
+  background-color: #e9e6dd;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.detalle-imagen {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.detalle-imagen-vacia {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--text-muted, #666);
+  font-size: 2.5rem;
+}
+
+.detalle-imagen-vacia span {
+  font-size: 0.9rem;
+}
+
+.detalle-contenido {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* ==========================================
+   TARJETAS PRINCIPAL Y SIDEBAR (DIFERENCIACIÓN)
+   ========================================== */
+
+.detalle-principal,
+.detalle-sidebar {
+  background-color: #ffffff; /* Fondo blanco puro para contrastar con la página */
+  padding: 1.8rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  text-align: left;
+}
+
+.detalle-sidebar {
+  position: sticky;
+  top: 1.5rem;
+}
+
+.detalle-tipo {
+  display: inline-block;
+  color: var(--gold-primary, #c5a059);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.detalle-titulo {
+  margin: 0;
+  color: #1a1a1a;
+  font-family: Georgia, serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.detalle-ubicacion {
+  margin: 0.6rem 0 1.5rem 0;
+  color: #555555;
+  font-size: 0.9rem;
+}
+
+/* ==========================================
+   CARACTERÍSTICAS
+   ========================================== */
+
+.detalle-caracteristicas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1.2rem 0;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.detalle-caracteristica {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+  justify-content: flex-start;
+}
+
+.detalle-icono {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f0e6;
+  border-radius: 50%;
+  font-size: 1.1rem;
+}
+
+.detalle-caracteristica > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  text-align: left;
+}
+
+.detalle-label {
+  display: block;
+  color: #666666;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.detalle-caracteristica strong {
+  color: #1a1a1a;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+/* ==========================================
+   DESCRIPCIÓN
+   ========================================== */
+
+.detalle-descripcion {
+  padding-top: 1.5rem;
+  text-align: left;
+}
+
+.detalle-descripcion h2 {
+  margin: 0 0 0.8rem 0;
+  color: #1a1a1a;
+  font-family: Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.detalle-descripcion p {
+  margin: 0;
+  color: #444444;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   PRECIO
+   ========================================== */
+
+.detalle-precio {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 1.2rem;
+}
+
+.detalle-precio span {
+  color: #666666;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.detalle-precio strong {
+  color: #b38226; /* Tono dorado oscuro visible sobre blanco */
+  font-family: Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+/* ==========================================
+   AGENCIA
+   ========================================== */
+
+.detalle-agencia {
+  padding: 0.5rem 0 1.2rem 0;
+  border-top: 1px solid #f0f0f0;
+}
+
+.detalle-agencia-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.7rem;
+}
+
+.detalle-agencia-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  background-color: #0d1e38;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.detalle-agencia-info > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  text-align: left;
+}
+
+.detalle-agencia-info strong {
+  color: #1a1a1a;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.detalle-agencia-info span {
+  color: #666666;
+  font-size: 0.78rem;
+}
+
+/* ==========================================
+   BOTONES (CORRECCIÓN SOLICITAR CITA Y LLAMAR)
+   ========================================== */
+
+.btn-detalle-principal,
+.btn-detalle-secundario {
+  width: 100%;
+  padding: 0.85rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+  margin-top: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Botón "Solicitar Cita": Fondo oscuro con texto blanco visible */
+.btn-detalle-principal {
+  background-color: #0d1e38;
+  color: #ffffff !important;
+  border: 1px solid #0d1e38;
+  box-shadow: 0 2px 6px rgba(13, 30, 56, 0.2);
+}
+
+.btn-detalle-principal:hover {
+  background-color: #1a365d;
+  border-color: #1a365d;
+}
+
+/* Botón "Llamar": Borde claro y texto legible */
+.btn-detalle-secundario {
+  background-color: #ffffff;
+  color: #0d1e38 !important;
+  border: 1.5px solid #0d1e38;
+}
+
+.btn-detalle-secundario:hover {
+  background-color: #f4f6f8;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+.footer {
+  width: 100%;
+  padding: 1.5rem 0;
+  margin-top: 2rem;
+  background-color: #0d1e38;
+  color: #ffffff;
+  text-align: center;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 768px) {
+  .detalle-container {
+    padding: 1rem;
+  }
+
+  .detalle-imagen-container {
+    height: 280px;
+  }
+
+  .detalle-contenido {
+    grid-template-columns: 1fr;
+  }
+
+  .detalle-sidebar {
+    position: static;
+  }
+
+  .detalle-caracteristicas {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .detalle-titulo {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .detalle-imagen-container {
+    height: 220px;
+  }
+
+  .detalle-principal,
+  .detalle-sidebar {
+    padding: 1.2rem;
+  }
+
+  .detalle-titulo {
+    font-size: 1.4rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   FORMULARIO DE SOLICITAR CITA
+   ========================================== */
+
+.formulario-cita-container {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, sans-serif;
+  text-align: left;
+}
+
+
+/* ==========================================
+   BOTÓN VOLVER
+   ========================================== */
+
+.formulario-cita-container .btn-volver {
+  background: none;
+  border: none;
+  color: #666666;
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 1.5rem;
+  transition: color 0.2s ease;
+}
+
+.formulario-cita-container .btn-volver:hover {
+  color: #b38226;
+}
+
+
+/* ==========================================
+   TARJETA PRINCIPAL
+   ========================================== */
+
+.formulario-cita-card {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+
+/* ==========================================
+   ENCABEZADO
+   ========================================== */
+
+.formulario-cita-header {
+  margin-bottom: 1.5rem;
+}
+
+.formulario-cita-label {
+  display: block;
+  color: #b38226;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.formulario-cita-header h1 {
+  margin: 0;
+  color: #1a1a1a;
+  font-family: Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.formulario-cita-header p {
+  margin: 0.5rem 0 0;
+  color: #666666;
+  font-size: 0.88rem;
+}
+
+
+/* ==========================================
+   RESUMEN DEL INMUEBLE
+   ========================================== */
+
+.cita-inmueble-resumen {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: #eeebe3;
+  border-radius: 4px;
+}
+
+.cita-inmueble-icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  background-color: #0d1e38;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.cita-inmueble-resumen > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.cita-inmueble-resumen span {
+  color: #666666;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+.cita-inmueble-resumen strong {
+  color: #333333;
+  font-size: 0.9rem;
+}
+
+.cita-inmueble-resumen small {
+  color: #777777;
+  font-size: 0.75rem;
+}
+
+
+/* ==========================================
+   FORMULARIO
+   ========================================== */
+
+.formulario-cita {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+
+/* ==========================================
+   CAMPOS
+   ========================================== */
+
+.campo-cita {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.campo-cita label {
+  color: #666666;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+
+/* ==========================================
+   INPUTS Y SELECT
+   ========================================== */
+
+.campo-cita input,
+.campo-cita select,
+.campo-cita textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  background-color: #eeebe3;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 0.88rem;
+  color: #222222;
+  box-sizing: border-box;
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+
+/* ==========================================
+   EFECTO FOCUS
+   ========================================== */
+
+.campo-cita input:focus,
+.campo-cita select:focus,
+.campo-cita textarea:focus {
+  background-color: #ffffff;
+  border-color: #b38226;
+  box-shadow: 0 0 0 2px rgba(179, 130, 38, 0.15);
+}
+
+
+/* ==========================================
+   CAMPOS SOLO LECTURA
+   ========================================== */
+
+.campo-cita input[readonly] {
+  background-color: #eeebe3;
+  color: #555555;
+  cursor: default;
+}
+
+
+/* ==========================================
+   TEXTAREA
+   ========================================== */
+
+.campo-cita textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.campo-cita textarea::placeholder {
+  color: #888888;
+}
+
+
+/* ==========================================
+   MENSAJE - OCUPA TODO EL ANCHO
+   ========================================== */
+
+.campo-mensaje {
+  grid-column: 1 / -1;
+}
+
+
+/* ==========================================
+   BOTONES
+   ========================================== */
+
+.cita-botones {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.btn-cita-enviar,
+.btn-cita-cancelar {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+
+/* ==========================================
+   BOTÓN ENVIAR
+   ========================================== */
+
+.btn-cita-enviar {
+  background-color: #c5a059;
+  color: #ffffff;
+  border: 1px solid #c5a059;
+}
+
+.btn-cita-enviar:hover {
+  background-color: #b08d46;
+  border-color: #b08d46;
+}
+
+
+/* ==========================================
+   BOTÓN CANCELAR
+   ========================================== */
+
+.btn-cita-cancelar {
+  background-color: #ffffff;
+  color: #444444;
+  border: 1px solid #dcdcdc;
+}
+
+.btn-cita-cancelar:hover {
+  background-color: #f7f7f7;
+  border-color: #bfbfbf;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 520px) {
+
+  .formulario-cita-container {
+    padding: 1.25rem 1rem;
+  }
+
+  .formulario-cita-card {
+    padding: 1.25rem;
+  }
+
+  .formulario-cita {
+    grid-template-columns: 1fr;
+  }
+
+  .campo-mensaje {
+    grid-column: auto;
+  }
+
+  .cita-botones {
+    grid-template-columns: 1fr;
+    grid-column: auto;
+  }
+
+  .formulario-cita-header h1 {
+    font-size: 1.8rem;
+  }
+
+}

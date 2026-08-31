@@ -1,36 +1,22 @@
-//SARA
+// SARA
 
-// MODULO 3 REGISTRO DE INMUEBLE -- CUANDO INICIE SESION LA INMOBILIARIA
-// Módulo 3 – Registro de inmueble
-/*La inmobiliaria deberá poder registrar una
-propiedad. El formulario debe incluir:
-Información básica
-• Fotografía.
-• Código del inmueble.
-• Tipo de inmueble.
-• Dirección.
-• Ciudad.
-• Barrio.
-Información comercial
-• Tipo de operación.
-• Precio.
-• Estado del inmueble.
-Características
-• Área.
-• Habitaciones.
-• Baños.
-• Garajes.
+// MODULO 3 REGISTRO DE INMUEBLE
+// Permite registrar y editar inmuebles
 
-.*/
-
-import { useState } from "react";
-import "./App.css";
+import { useState, useEffect } from "react";
+import "../App.css";
 
 function RegistroInmueble({
   volverPanel,
   guardarInmueble,
+  inmuebleEditando,
 }) {
-  const [formulario, setFormulario] = useState({
+
+  // ==========================================
+  // FORMULARIO INICIAL
+  // ==========================================
+
+  const formularioInicial = {
     fotografia: "",
     codigo: "",
     tipoInmueble: "",
@@ -45,52 +31,171 @@ function RegistroInmueble({
     banos: "",
     garajes: "",
     descripcion: "",
-  });
+  };
+
+
+  const [formulario, setFormulario] = useState(
+    formularioInicial
+  );
+
 
   const [preview, setPreview] = useState("");
 
-  // -------------------------
+
+  // ==========================================
+  // CARGAR DATOS PARA EDITAR
+  // ==========================================
+
+  useEffect(() => {
+
+    if (inmuebleEditando) {
+
+      // ======================================
+      // MODO EDITAR
+      // ======================================
+
+      setFormulario({
+
+        fotografia:
+          inmuebleEditando.fotografia || "",
+
+        codigo:
+          inmuebleEditando.codigo || "",
+
+        tipoInmueble:
+          inmuebleEditando.tipoInmueble || "",
+
+        direccion:
+          inmuebleEditando.direccion || "",
+
+        ciudad:
+          inmuebleEditando.ciudad || "",
+
+        barrio:
+          inmuebleEditando.barrio || "",
+
+        tipoOperacion:
+          inmuebleEditando.tipoOperacion || "",
+
+        precio:
+          inmuebleEditando.precio || "",
+
+        estado:
+          inmuebleEditando.estado || "",
+
+        area:
+          inmuebleEditando.area || "",
+
+        habitaciones:
+          inmuebleEditando.habitaciones || "",
+
+        banos:
+          inmuebleEditando.banos || "",
+
+        garajes:
+          inmuebleEditando.garajes || "",
+
+        descripcion:
+          inmuebleEditando.descripcion || "",
+
+      });
+
+
+      // Mostrar fotografía anterior
+
+      setPreview(
+        inmuebleEditando.fotografia || ""
+      );
+
+    } else {
+
+      // ======================================
+      // MODO REGISTRAR
+      // ======================================
+
+      setFormulario({
+        ...formularioInicial,
+      });
+
+      setPreview("");
+
+    }
+
+  }, [inmuebleEditando]);
+
+
+  // ==========================================
   // CAMBIAR CAMPOS
-  // -------------------------
+  // ==========================================
 
   const handleChange = (e) => {
+
     const { name, value } = e.target;
 
-    setFormulario({
-      ...formulario,
-      [name]: value,
-    });
+    setFormulario(
+      (formularioAnterior) => ({
+
+        ...formularioAnterior,
+
+        [name]: value,
+
+      })
+    );
+
   };
 
-  // -------------------------
-  // FOTOGRAFÍA
-  // -------------------------
+
+  // ==========================================
+  // CAMBIAR FOTOGRAFÍA
+  // ==========================================
 
   const handleImagen = (e) => {
+
     const archivo = e.target.files[0];
 
-    if (!archivo) return;
+    if (!archivo) {
+      return;
+    }
+
 
     const reader = new FileReader();
 
+
     reader.onloadend = () => {
-      setFormulario({
-        ...formulario,
-        fotografia: reader.result,
-      });
+
+      setFormulario(
+        (formularioAnterior) => ({
+
+          ...formularioAnterior,
+
+          fotografia: reader.result,
+
+        })
+      );
+
 
       setPreview(reader.result);
+
     };
 
+
     reader.readAsDataURL(archivo);
+
   };
 
-  // -------------------------
+
+  // ==========================================
   // GUARDAR
-  // -------------------------
+  // ==========================================
 
   const handleSubmit = (e) => {
+
     e.preventDefault();
+
+
+    // ======================================
+    // VALIDAR CAMPOS OBLIGATORIOS
+    // ======================================
 
     if (
       !formulario.codigo ||
@@ -101,94 +206,216 @@ function RegistroInmueble({
       !formulario.precio ||
       !formulario.estado
     ) {
-      alert("Por favor completa los campos obligatorios.");
+
+      alert(
+        "Por favor completa los campos obligatorios."
+      );
+
       return;
+
     }
 
+
+    // ======================================
+    // EDITAR INMUEBLE EXISTENTE
+    // ======================================
+
+    if (inmuebleEditando) {
+
+      const inmuebleActualizado = {
+
+        // Mantener datos originales
+        ...inmuebleEditando,
+
+        // Reemplazar con datos modificados
+        ...formulario,
+
+        // IMPORTANTE:
+        // conservar exactamente el mismo ID
+        id: inmuebleEditando.id,
+
+        // Mantener fecha original
+        fechaRegistro:
+          inmuebleEditando.fechaRegistro,
+
+      };
+
+
+      guardarInmueble(
+        inmuebleActualizado
+      );
+
+
+      alert(
+        "¡Inmueble actualizado correctamente!"
+      );
+
+
+      return;
+
+    }
+
+
+    // ======================================
+    // REGISTRAR INMUEBLE NUEVO
+    // ======================================
+
     const nuevoInmueble = {
+
       id: Date.now(),
+
       ...formulario,
-      fechaRegistro: new Date().toISOString(),
+
+      fechaRegistro:
+        new Date().toISOString(),
+
     };
 
-    guardarInmueble(nuevoInmueble);
 
-    alert("¡Inmueble registrado correctamente!");
+    guardarInmueble(
+      nuevoInmueble
+    );
+
+
+    alert(
+      "¡Inmueble registrado correctamente!"
+    );
+
   };
 
+
+  // ==========================================
+  // RETURN
+  // ==========================================
+
   return (
+
     <div className="registro-page">
 
-      {/* HEADER */}
+
+      {/* ======================================
+          HEADER
+      ====================================== */}
 
       <header className="registro-header">
 
         <div>
+
           <span className="registro-label">
             GESTIÓN DE INMUEBLES 2026
           </span>
 
-          <h1>Registrar inmueble</h1>
+
+          <h1>
+
+            {inmuebleEditando
+              ? "Editar inmueble"
+              : "Registrar inmueble"}
+
+          </h1>
+
 
           <p>
-            Ingresa la información de la propiedad.
+
+            {inmuebleEditando
+
+              ? "Modifica la información de la propiedad."
+
+              : "Ingresa la información de la propiedad."}
+
           </p>
+
         </div>
+
 
         <button
           type="button"
           className="btn-volver"
           onClick={volverPanel}
         >
+
           ← Volver
+
         </button>
 
       </header>
+
+
+      {/* ======================================
+          FORMULARIO
+      ====================================== */}
 
       <form
         className="registro-form"
         onSubmit={handleSubmit}
       >
 
-        {/* =====================
+
+        {/* ====================================
             INFORMACIÓN BÁSICA
-        ===================== */}
+        ==================================== */}
 
         <section className="form-section">
 
           <div className="section-title">
+
             <span>01</span>
 
             <div>
-              <h2>Información básica</h2>
+
+              <h2>
+                Información básica
+              </h2>
+
               <p>
                 Información principal del inmueble
               </p>
+
             </div>
+
           </div>
 
+
           <div className="form-grid">
+
 
             {/* FOTOGRAFÍA */}
 
             <div className="form-group fotografia-group">
 
-              <label>Fotografía</label>
+              <label>
+                Fotografía
+              </label>
+
 
               <div className="image-upload">
 
+
                 {preview ? (
+
                   <img
                     src={preview}
                     alt="Vista previa"
                   />
+
                 ) : (
+
                   <div className="upload-placeholder">
+
                     <span>+</span>
-                    <p>Agregar fotografía</p>
-                    <small>JPG, PNG</small>
+
+                    <p>
+                      Agregar fotografía
+                    </p>
+
+                    <small>
+                      JPG, PNG
+                    </small>
+
                   </div>
+
                 )}
+
 
                 <input
                   type="file"
@@ -200,6 +427,7 @@ function RegistroInmueble({
 
             </div>
 
+
             {/* CÓDIGO */}
 
             <div className="form-group">
@@ -207,6 +435,7 @@ function RegistroInmueble({
               <label>
                 Código del inmueble *
               </label>
+
 
               <input
                 type="text"
@@ -218,6 +447,7 @@ function RegistroInmueble({
 
             </div>
 
+
             {/* TIPO */}
 
             <div className="form-group">
@@ -225,6 +455,7 @@ function RegistroInmueble({
               <label>
                 Tipo de inmueble *
               </label>
+
 
               <select
                 name="tipoInmueble"
@@ -264,6 +495,7 @@ function RegistroInmueble({
 
             </div>
 
+
             {/* DIRECCIÓN */}
 
             <div className="form-group">
@@ -271,6 +503,7 @@ function RegistroInmueble({
               <label>
                 Dirección *
               </label>
+
 
               <input
                 type="text"
@@ -282,6 +515,7 @@ function RegistroInmueble({
 
             </div>
 
+
             {/* CIUDAD */}
 
             <div className="form-group">
@@ -289,6 +523,7 @@ function RegistroInmueble({
               <label>
                 Ciudad *
               </label>
+
 
               <input
                 type="text"
@@ -300,6 +535,7 @@ function RegistroInmueble({
 
             </div>
 
+
             {/* BARRIO */}
 
             <div className="form-group">
@@ -307,6 +543,7 @@ function RegistroInmueble({
               <label>
                 Barrio
               </label>
+
 
               <input
                 type="text"
@@ -322,9 +559,10 @@ function RegistroInmueble({
 
         </section>
 
-        {/* =====================
+
+        {/* ====================================
             INFORMACIÓN COMERCIAL
-        ===================== */}
+        ==================================== */}
 
         <section className="form-section">
 
@@ -333,22 +571,31 @@ function RegistroInmueble({
             <span>02</span>
 
             <div>
-              <h2>Información comercial</h2>
+
+              <h2>
+                Información comercial
+              </h2>
 
               <p>
                 Información relacionada con la operación
               </p>
+
             </div>
 
           </div>
 
+
           <div className="form-grid">
+
+
+            {/* TIPO DE OPERACIÓN */}
 
             <div className="form-group">
 
               <label>
                 Tipo de operación *
               </label>
+
 
               <select
                 name="tipoOperacion"
@@ -372,11 +619,15 @@ function RegistroInmueble({
 
             </div>
 
+
+            {/* PRECIO */}
+
             <div className="form-group">
 
               <label>
                 Precio *
               </label>
+
 
               <input
                 type="number"
@@ -389,11 +640,15 @@ function RegistroInmueble({
 
             </div>
 
+
+            {/* ESTADO */}
+
             <div className="form-group">
 
               <label>
                 Estado del inmueble *
               </label>
+
 
               <select
                 name="estado"
@@ -429,9 +684,10 @@ function RegistroInmueble({
 
         </section>
 
-        {/* =====================
+
+        {/* ====================================
             CARACTERÍSTICAS
-        ===================== */}
+        ==================================== */}
 
         <section className="form-section">
 
@@ -440,22 +696,31 @@ function RegistroInmueble({
             <span>03</span>
 
             <div>
-              <h2>Características</h2>
+
+              <h2>
+                Características
+              </h2>
 
               <p>
                 Características físicas del inmueble
               </p>
+
             </div>
 
           </div>
 
+
           <div className="form-grid characteristics">
+
+
+            {/* ÁREA */}
 
             <div className="form-group">
 
               <label>
                 Área (m²)
               </label>
+
 
               <input
                 type="number"
@@ -468,11 +733,15 @@ function RegistroInmueble({
 
             </div>
 
+
+            {/* HABITACIONES */}
+
             <div className="form-group">
 
               <label>
                 Habitaciones
               </label>
+
 
               <input
                 type="number"
@@ -485,11 +754,15 @@ function RegistroInmueble({
 
             </div>
 
+
+            {/* BAÑOS */}
+
             <div className="form-group">
 
               <label>
                 Baños
               </label>
+
 
               <input
                 type="number"
@@ -502,11 +775,15 @@ function RegistroInmueble({
 
             </div>
 
+
+            {/* GARAJES */}
+
             <div className="form-group">
 
               <label>
                 Garajes
               </label>
+
 
               <input
                 type="number"
@@ -523,9 +800,10 @@ function RegistroInmueble({
 
         </section>
 
-        {/* =====================
+
+        {/* ====================================
             DESCRIPCIÓN
-        ===================== */}
+        ==================================== */}
 
         <section className="form-section">
 
@@ -534,20 +812,26 @@ function RegistroInmueble({
             <span>04</span>
 
             <div>
-              <h2>Descripción</h2>
+
+              <h2>
+                Descripción
+              </h2>
 
               <p>
                 Describe las características principales
               </p>
+
             </div>
 
           </div>
+
 
           <div className="form-group">
 
             <label>
               Descripción general del inmueble
             </label>
+
 
             <textarea
               name="descripcion"
@@ -561,34 +845,45 @@ function RegistroInmueble({
 
         </section>
 
-        {/* =====================
+
+        {/* ====================================
             BOTONES
-        ===================== */}
+        ==================================== */}
 
         <div className="form-actions">
+
 
           <button
             type="button"
             className="btn-cancelar"
             onClick={volverPanel}
           >
+
             Cancelar
+
           </button>
+
 
           <button
             type="submit"
             className="btn-registrar"
           >
-            Registrar inmueble
+
+            {inmuebleEditando
+              ? "Guardar cambios"
+              : "Registrar inmueble"}
+
           </button>
+
 
         </div>
 
       </form>
 
     </div>
+
   );
+
 }
 
 export default RegistroInmueble;
-
