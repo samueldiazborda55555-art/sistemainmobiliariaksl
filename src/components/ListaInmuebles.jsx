@@ -2,24 +2,27 @@ import { useState } from "react";
 import TarjetaInmueble from "./TarjetaInmueble";
 
 export default function ListaInmuebles({
-  inmuebles,
+  inmuebles = [],
   onSeleccionarInmueble,
 }) {
   const [busqueda, setBusqueda] = useState("");
   const [ciudadFiltro, setCiudadFiltro] = useState("Todas");
 
+  const ciudadesDisponibles = [
+    "Todas",
+    ...new Set(inmuebles.map((item) => item.ciudad).filter(Boolean)),
+  ];
+
   const inmueblesFiltrados = inmuebles.filter((item) => {
     const coincideCiudad =
       ciudadFiltro === "Todas" ||
-      item.ciudad === ciudadFiltro;
+      item.ciudad?.toLowerCase() === ciudadFiltro.toLowerCase();
 
-    const nombreInmueble =
-      item.tipoInmueble || "";
+    const nombreInmueble = item.tipoInmueble || "";
 
-    const coincideNombre =
-      nombreInmueble
-        .toLowerCase()
-        .includes(busqueda.toLowerCase());
+    const coincideNombre = nombreInmueble
+      .toLowerCase()
+      .includes(busqueda.toLowerCase());
 
     return coincideCiudad && coincideNombre;
   });
@@ -39,9 +42,7 @@ export default function ListaInmuebles({
           type="text"
           placeholder="Buscar por nombre..."
           value={busqueda}
-          onChange={(e) =>
-            setBusqueda(e.target.value)
-          }
+          onChange={(e) => setBusqueda(e.target.value)}
           style={{
             flex: 1,
             padding: "0.5rem",
@@ -50,29 +51,19 @@ export default function ListaInmuebles({
 
         <select
           value={ciudadFiltro}
-          onChange={(e) =>
-            setCiudadFiltro(e.target.value)
-          }
+          onChange={(e) => setCiudadFiltro(e.target.value)}
         >
-          <option value="Todas">
-            Todas las ciudades
-          </option>
-
-          <option value="Bogotá">
-            Bogotá
-          </option>
-
-          <option value="Medellín">
-            Medellín
-          </option>
+          {ciudadesDisponibles.map((ciudad) => (
+            <option key={ciudad} value={ciudad}>
+              {ciudad === "Todas" ? "Todas las ciudades" : ciudad}
+            </option>
+          ))}
         </select>
       </div>
 
       <div className="grid-container">
         {inmueblesFiltrados.length === 0 ? (
-          <p>
-            No hay inmuebles disponibles.
-          </p>
+          <p>No hay inmuebles disponibles.</p>
         ) : (
           inmueblesFiltrados.map((inmueble) => (
             <TarjetaInmueble

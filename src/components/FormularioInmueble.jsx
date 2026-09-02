@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import "../App.css";
 
+
+
+
 function RegistroInmueble({
   volverPanel,
   guardarInmueble,
@@ -708,6 +711,8 @@ function RegistroInmueble({
             />
 
           </div>
+
+          
 
         </section>
 

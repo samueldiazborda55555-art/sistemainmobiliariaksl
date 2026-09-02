@@ -1,10 +1,6 @@
 import { useState } from "react";
 import "./App.css";
 
-// ==========================================
-// COMPONENTES
-// ==========================================
-
 import Login from "./components/login";
 import RegistroUsuario from "./components/RegistroUsuario";
 import PanelAdmin from "./components/Paneladmin";

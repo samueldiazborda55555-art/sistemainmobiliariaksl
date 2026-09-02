@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../App.css";
+import VistaPreviaCita from "./Vistaaprevia";
 
 export default function FormularioCita({
   inmueble,
@@ -106,9 +107,6 @@ export default function FormularioCita({
 
       <main className="formulario-cita-container">
 
-
-        {/* VOLVER */}
-
         <button
           className="btn-volver"
           onClick={volverDetalle}
@@ -117,9 +115,6 @@ export default function FormularioCita({
         </button>
 
         <div className="formulario-cita-card">
-
-
-          {/* HEADER */}
 
           <div className="formulario-cita-header">
 
@@ -317,6 +312,13 @@ export default function FormularioCita({
             </div>
 
           </form>
+          <VistaPreviaCita
+            inmueble={inmueble}
+            usuario={usuario}
+            fecha={fecha}
+            hora={hora}
+            mensaje={mensaje}
+          />
 
         </div>
 
