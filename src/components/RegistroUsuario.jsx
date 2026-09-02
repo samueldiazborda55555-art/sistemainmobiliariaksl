@@ -11,12 +11,10 @@ function RegistroUsuario({ volverLogin, registrarUsuario }) {
   const [contraseña, setContraseña] = useState("");
   const [tipoUsuario, setTipoUsuario] = useState("");
 
-  // Registrar usuario
   const handleSubmit = (e) => {
 
     e.preventDefault();
 
-    // Validar campos
     if (
       !nombre ||
       !correo ||
@@ -29,7 +27,6 @@ function RegistroUsuario({ volverLogin, registrarUsuario }) {
       return;
     }
 
-    // Crear objeto con los datos
     const datos = {
       nombre,
       correo,
@@ -39,7 +36,6 @@ function RegistroUsuario({ volverLogin, registrarUsuario }) {
       tipoUsuario,
     };
 
-    // Enviar datos a App.jsx
     registrarUsuario(datos);
   };
 
@@ -79,8 +75,6 @@ function RegistroUsuario({ volverLogin, registrarUsuario }) {
           onSubmit={handleSubmit}
         >
 
-          {/* NOMBRE */}
-
           <div className="form-group">
 
             <label>
@@ -97,9 +91,6 @@ function RegistroUsuario({ volverLogin, registrarUsuario }) {
             />
 
           </div>
-
-
-          {/* CORREO */}
 
           <div className="form-group">
 
@@ -118,9 +109,6 @@ function RegistroUsuario({ volverLogin, registrarUsuario }) {
 
           </div>
 
-
-          {/* TELÉFONO */}
-
           <div className="form-group">
 
             <label>
@@ -137,9 +125,6 @@ function RegistroUsuario({ volverLogin, registrarUsuario }) {
             />
 
           </div>
-
-
-          {/* CIUDAD */}
 
           <div className="form-group">
 
@@ -158,9 +143,6 @@ function RegistroUsuario({ volverLogin, registrarUsuario }) {
 
           </div>
 
-
-          {/* CONTRASEÑA */}
-
           <div className="form-group">
 
             <label>
@@ -177,9 +159,6 @@ function RegistroUsuario({ volverLogin, registrarUsuario }) {
             />
 
           </div>
-
-
-          {/* TIPO DE USUARIO */}
 
           <div className="form-group">
 
@@ -210,9 +189,6 @@ function RegistroUsuario({ volverLogin, registrarUsuario }) {
 
           </div>
 
-
-          {/* BOTÓN */}
-
           <button
             type="submit"
             className="login-button"
@@ -221,9 +197,6 @@ function RegistroUsuario({ volverLogin, registrarUsuario }) {
           </button>
 
         </form>
-
-
-        {/* VOLVER AL LOGIN */}
 
         <p className="register">
 

@@ -8,10 +8,6 @@ function PanelAdmin({
   irCitas,
 }) {
 
-  // ==========================================
-  // ESTADÍSTICAS
-  // ==========================================
-
   const total = inmuebles.length;
 
   const disponibles = inmuebles.filter(
@@ -23,11 +19,6 @@ function PanelAdmin({
     (inmueble) =>
       inmueble.estado === "En negociación"
   ).length;
-
-
-  // ==========================================
-  // FORMATO DEL PRECIO
-  // ==========================================
 
   const formatearPrecio = (precio) => {
 
@@ -47,10 +38,6 @@ function PanelAdmin({
 
     <div className="admin-panel">
 
-      {/* ======================================
-          BARRA LATERAL
-      ====================================== */}
-
       <aside className="admin-sidebar">
 
         {/* LOGO */}
@@ -67,19 +54,11 @@ function PanelAdmin({
 
         </div>
 
-
-        {/* MENÚ */}
-
         <nav>
-
-          {/* PROPIEDADES */}
 
           <button className="menu-activo">
             Propiedades
           </button>
-
-
-          {/* CITAS */}
 
           <button
             onClick={irCitas}
@@ -88,9 +67,6 @@ function PanelAdmin({
           </button>
 
         </nav>
-
-
-        {/* CERRAR SESIÓN */}
 
         <button
           className="cerrar-sesion"
@@ -101,14 +77,7 @@ function PanelAdmin({
 
       </aside>
 
-
-      {/* ======================================
-          CONTENIDO PRINCIPAL
-      ====================================== */}
-
       <main className="admin-content">
-
-        {/* ENCABEZADO */}
 
         <header className="admin-header">
 
@@ -134,11 +103,6 @@ function PanelAdmin({
 
         </header>
 
-
-        {/* ====================================
-            ESTADÍSTICAS
-        ==================================== */}
-
         <section className="estadisticas">
 
           {/* TOTAL */}
@@ -155,9 +119,6 @@ function PanelAdmin({
 
           </div>
 
-
-          {/* DISPONIBLES */}
-
           <div className="estadistica">
 
             <span>
@@ -169,9 +130,6 @@ function PanelAdmin({
             </strong>
 
           </div>
-
-
-          {/* NEGOCIACIÓN */}
 
           <div className="estadistica">
 
@@ -187,14 +145,7 @@ function PanelAdmin({
 
         </section>
 
-
-        {/* ====================================
-            TABLA DE INMUEBLES
-        ==================================== */}
-
         <section className="tabla-inmuebles">
-
-          {/* ENCABEZADOS */}
 
           <div className="tabla-header">
 
@@ -220,9 +171,6 @@ function PanelAdmin({
 
           </div>
 
-
-          {/* SI NO HAY INMUEBLES */}
-
           {inmuebles.length === 0 ? (
 
             <div className="sin-inmuebles">
@@ -241,16 +189,12 @@ function PanelAdmin({
 
           ) : (
 
-            /* MOSTRAR INMUEBLES */
-
             inmuebles.map((inmueble) => (
 
               <div
                 className="fila-inmueble"
                 key={inmueble.id}
               >
-
-                {/* INMUEBLE */}
 
                 <div className="info-inmueble">
 
@@ -288,24 +232,15 @@ function PanelAdmin({
 
                 </div>
 
-
-                {/* CIUDAD */}
-
                 <span>
                   {inmueble.ciudad}
                 </span>
-
-
-                {/* PRECIO */}
 
                 <strong>
                   {formatearPrecio(
                     inmueble.precio
                   )}
                 </strong>
-
-
-                {/* ESTADO */}
 
                 <span
                   className={
@@ -321,12 +256,7 @@ function PanelAdmin({
                   {inmueble.estado}
                 </span>
 
-
-                {/* ACCIONES */}
-
                 <div className="acciones">
-
-                  {/* EDITAR */}
 
                   <button
                     type="button"
@@ -339,9 +269,6 @@ function PanelAdmin({
                   >
                     ✎
                   </button>
-
-
-                  {/* ELIMINAR */}
 
                   <button
                     type="button"

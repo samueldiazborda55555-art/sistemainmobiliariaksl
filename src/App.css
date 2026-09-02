@@ -16,11 +16,6 @@ body,
   box-sizing: border-box;
 }
 
-
-/* ========================================
-   LAYOUT PRINCIPAL
-======================================== */
-
 .login-page {
   display: flex;
   justify-content: center;
@@ -33,11 +28,6 @@ body,
   padding: 0;
 }
 
-
-/* ========================================
-   TARJETA CONTENEDORA
-======================================== */
-
 .login-card {
   display: flex;
   width: 100%;
@@ -48,11 +38,6 @@ body,
   overflow: hidden;
   border: none;
 }
-
-
-/* ========================================
-   LADO IZQUIERDO: IMAGEN Y TEXTO
-======================================== */
 
 .login-image {
   flex: 1;
@@ -72,11 +57,6 @@ body,
   box-sizing: border-box;
 }
 
-
-/* ========================================
-   TEXTO DE LA IMAGEN
-======================================== */
-
 .image-content p {
   color: #c0a062;
   font-size: 0.65rem;
@@ -95,11 +75,6 @@ body,
   line-height: 1.25;
 }
 
-
-/* ========================================
-   LADO DERECHO: FORMULARIO
-======================================== */
-
 .login-container {
   flex: 1;
   display: flex;
@@ -117,11 +92,6 @@ body,
   flex-direction: column;
   align-items: center;
 }
-
-
-/* ========================================
-   LOGO
-======================================== */
 
 .logo {
   display: flex;
@@ -145,11 +115,6 @@ body,
   margin-left: 3px;
 }
 
-
-/* ========================================
-   TÍTULOS
-======================================== */
-
 .login-content h1 {
   font-family: 'Georgia', serif;
   font-size: 1.4rem;
@@ -163,11 +128,6 @@ body,
   color: #718096;
   margin: 0 0 20px 0;
 }
-
-
-/* ========================================
-   INPUTS
-======================================== */
 
 .form-group {
   width: 100%;

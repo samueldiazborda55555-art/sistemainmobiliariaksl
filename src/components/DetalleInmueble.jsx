@@ -7,10 +7,6 @@ export default function DetalleInmueble({
   solicitarCita,
 }) {
 
-  // ==========================================
-  // VALIDAR INMUEBLE
-  // ==========================================
-
   if (!inmueble) {
 
     return (
@@ -42,11 +38,6 @@ export default function DetalleInmueble({
 
   }
 
-
-  // ==========================================
-  // PRECIO
-  // ==========================================
-
   const precioFormateado = inmueble.precio
     ? `$${Number(inmueble.precio).toLocaleString("es-CO")}`
     : "Precio no disponible";
@@ -55,11 +46,6 @@ export default function DetalleInmueble({
   return (
 
     <div className="cliente-page">
-
-
-      {/* ======================================
-          HEADER
-      ====================================== */}
 
       <header className="header">
 
@@ -95,11 +81,6 @@ export default function DetalleInmueble({
 
       </header>
 
-
-      {/* ======================================
-          CONTENIDO
-      ====================================== */}
-
       <main className="detalle-container">
 
 
@@ -112,8 +93,6 @@ export default function DetalleInmueble({
           ← Volver al listado
         </button>
 
-
-        {/* IMAGEN */}
 
         <div className="detalle-imagen-container">
 
@@ -144,13 +123,7 @@ export default function DetalleInmueble({
 
         </div>
 
-
-        {/* INFORMACIÓN */}
-
         <div className="detalle-contenido">
-
-
-          {/* COLUMNA IZQUIERDA */}
 
           <div className="detalle-principal">
 
@@ -182,13 +155,7 @@ export default function DetalleInmueble({
 
             </p>
 
-
-            {/* CARACTERÍSTICAS */}
-
             <div className="detalle-caracteristicas">
-
-
-              {/* ÁREA */}
 
               <div className="detalle-caracteristica">
 
@@ -214,9 +181,6 @@ export default function DetalleInmueble({
 
               </div>
 
-
-              {/* HABITACIONES */}
-
               <div className="detalle-caracteristica">
 
                 <span className="detalle-icono">
@@ -239,9 +203,6 @@ export default function DetalleInmueble({
                 </div>
 
               </div>
-
-
-              {/* BAÑOS */}
 
               <div className="detalle-caracteristica">
 
@@ -268,9 +229,6 @@ export default function DetalleInmueble({
 
             </div>
 
-
-            {/* DESCRIPCIÓN */}
-
             <section className="detalle-descripcion">
 
               <h2>
@@ -288,15 +246,7 @@ export default function DetalleInmueble({
 
           </div>
 
-
-          {/* ====================================
-              SIDEBAR
-          ==================================== */}
-
           <aside className="detalle-sidebar">
-
-
-            {/* PRECIO */}
 
             <div className="detalle-precio">
 
@@ -309,9 +259,6 @@ export default function DetalleInmueble({
               </strong>
 
             </div>
-
-
-            {/* AGENCIA */}
 
             <div className="detalle-agencia">
 
@@ -342,20 +289,12 @@ export default function DetalleInmueble({
 
             </div>
 
-
-            {/* ==================================
-                SOLICITAR CITA
-            ================================== */}
-
             <button
               className="btn-detalle-principal"
               onClick={solicitarCita}
             >
               Solicitar cita
             </button>
-
-
-            {/* LLAMAR */}
 
             <button
               className="btn-detalle-secundario"
@@ -373,9 +312,6 @@ export default function DetalleInmueble({
         </div>
 
       </main>
-
-
-      {/* FOOTER */}
 
       <footer className="footer">
 

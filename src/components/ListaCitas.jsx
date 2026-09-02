@@ -1,25 +1,3 @@
-//SARA
-/*Módulo 9 – Gestión de citas
-
-La inmobiliaria podrá visualizar las
-solicitudes: Los estados pueden ser:
-Pendiente
-Aceptada
-Rechazada*/
-
-//SARA
-/*Módulo 9 – Gestión de citas
-
-La inmobiliaria podrá visualizar las
-solicitudes: Los estados pueden ser:
-Pendiente
-Aceptada
-Rechazada*/
-
-// SARA
-// PANEL DE GESTIÓN DE CITAS
-// Permite visualizar, confirmar y rechazar citas
-
 import { useEffect, useState } from "react";
 import "../App.css";
 
@@ -28,10 +6,6 @@ function PanelCitas({
   volverPropiedades,
   cerrarSesion,
 }) {
-
-  // ==========================================
-  // CITAS INICIALES
-  // ==========================================
 
   const citasIniciales = [
     {
@@ -75,11 +49,6 @@ function PanelCitas({
     },
   ];
 
-
-  // ==========================================
-  // CARGAR CITAS
-  // ==========================================
-
   const citasGuardadas =
     localStorage.getItem("citas");
 
@@ -90,17 +59,7 @@ function PanelCitas({
       : citasIniciales
   );
 
-
-  // ==========================================
-  // FILTRO
-  // ==========================================
-
   const [filtro, setFiltro] = useState("Todas");
-
-
-  // ==========================================
-  // GUARDAR CITAS
-  // ==========================================
 
   useEffect(() => {
 
@@ -110,11 +69,6 @@ function PanelCitas({
     );
 
   }, [citas]);
-
-
-  // ==========================================
-  // CONFIRMAR CITA
-  // ==========================================
 
   const confirmarCita = (id) => {
 
@@ -142,11 +96,6 @@ function PanelCitas({
     });
 
   };
-
-
-  // ==========================================
-  // RECHAZAR CITA
-  // ==========================================
 
   const rechazarCita = (id) => {
 
@@ -181,11 +130,6 @@ function PanelCitas({
 
   };
 
-
-  // ==========================================
-  // VER CITA
-  // ==========================================
-
   const verCita = (cita) => {
 
     alert(
@@ -200,11 +144,6 @@ function PanelCitas({
 
   };
 
-
-  // ==========================================
-  // FILTRAR CITAS
-  // ==========================================
-
   const citasFiltradas = citas.filter((cita) => {
 
     if (filtro === "Todas") {
@@ -214,11 +153,6 @@ function PanelCitas({
     return cita.estado === filtro;
 
   });
-
-
-  // ==========================================
-  // CONTADORES
-  // ==========================================
 
   const pendientes = citas.filter(
     (cita) => cita.estado === "Pendiente"
@@ -234,24 +168,11 @@ function PanelCitas({
     (cita) => cita.estado === "Rechazada"
   ).length;
 
-
-  // ==========================================
-  // RETURN
-  // ==========================================
-
   return (
 
     <div className="citas-page">
 
-
-      {/* ======================================
-          SIDEBAR
-      ====================================== */}
-
       <aside className="citas-sidebar">
-
-
-        {/* LOGO / ADMIN */}
 
         <div className="citas-admin">
 
@@ -265,13 +186,7 @@ function PanelCitas({
 
         </div>
 
-
-        {/* MENÚ */}
-
         <nav className="citas-menu">
-
-
-          {/* PROPIEDADES */}
 
           <button
             className="citas-menu-item"
@@ -287,9 +202,6 @@ function PanelCitas({
             </span>
 
           </button>
-
-
-          {/* CITAS */}
 
           <button
             className="citas-menu-item active"
@@ -308,9 +220,6 @@ function PanelCitas({
 
         </nav>
 
-
-        {/* CERRAR SESIÓN */}
-
         <button
           className="citas-cerrar"
           onClick={cerrarSesion}
@@ -327,15 +236,7 @@ function PanelCitas({
 
       </aside>
 
-
-      {/* ======================================
-          CONTENIDO PRINCIPAL
-      ====================================== */}
-
       <main className="citas-content">
-
-
-        {/* HEADER */}
 
         <div className="citas-header">
 
@@ -353,15 +254,7 @@ function PanelCitas({
 
         </div>
 
-
-        {/* ======================================
-            TARJETAS DE ESTADO
-        ====================================== */}
-
         <div className="citas-stats">
-
-
-          {/* PENDIENTES */}
 
           <div className="cita-stat-card">
 
@@ -375,9 +268,6 @@ function PanelCitas({
 
           </div>
 
-
-          {/* CONFIRMADAS */}
-
           <div className="cita-stat-card">
 
             <span className="stat-label">
@@ -389,9 +279,6 @@ function PanelCitas({
             </strong>
 
           </div>
-
-
-          {/* RECHAZADAS */}
 
           <div className="cita-stat-card">
 
@@ -408,15 +295,7 @@ function PanelCitas({
 
         </div>
 
-
-        {/* ======================================
-            TABLA
-        ====================================== */}
-
         <div className="citas-table-container">
-
-
-          {/* FILTROS */}
 
           <div className="citas-filtros">
 
@@ -474,9 +353,6 @@ function PanelCitas({
 
           </div>
 
-
-          {/* TABLA */}
-
           <div className="tabla-scroll">
 
             <table className="citas-table">
@@ -521,9 +397,6 @@ function PanelCitas({
 
                     <tr key={cita.id}>
 
-
-                      {/* CLIENTE */}
-
                       <td>
 
                         <div className="cliente-info">
@@ -540,9 +413,6 @@ function PanelCitas({
 
                       </td>
 
-
-                      {/* INMUEBLE */}
-
                       <td>
 
                         <span className="inmueble-cita">
@@ -553,15 +423,9 @@ function PanelCitas({
 
                       </td>
 
-
-                      {/* FECHA */}
-
                       <td>
                         {cita.fecha}
                       </td>
-
-
-                      {/* HORA */}
 
                       <td>
 
@@ -570,9 +434,6 @@ function PanelCitas({
                         </span>
 
                       </td>
-
-
-                      {/* ESTADO */}
 
                       <td>
 
@@ -594,15 +455,9 @@ function PanelCitas({
 
                       </td>
 
-
-                      {/* ACCIONES */}
-
                       <td>
 
                         <div className="acciones-cita">
-
-
-                          {/* CONFIRMAR */}
 
                           {cita.estado === "Pendiente" && (
 
@@ -618,9 +473,6 @@ function PanelCitas({
 
                           )}
 
-
-                          {/* RECHAZAR */}
-
                           {cita.estado === "Pendiente" && (
 
                             <button
@@ -634,9 +486,6 @@ function PanelCitas({
                             </button>
 
                           )}
-
-
-                          {/* VER */}
 
                           <button
                             className="accion ver"

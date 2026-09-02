@@ -12,11 +12,6 @@ export default function FormularioCita({
   const [hora, setHora] = useState("");
   const [mensaje, setMensaje] = useState("");
 
-
-  // ==========================================
-  // GUARDAR CITA
-  // ==========================================
-
   const enviarSolicitud = (e) => {
 
     e.preventDefault();
@@ -65,11 +60,6 @@ export default function FormularioCita({
 
   };
 
-
-  // ==========================================
-  // FECHA MÍNIMA
-  // ==========================================
-
   const fechaMinima =
     new Date()
       .toISOString()
@@ -79,11 +69,6 @@ export default function FormularioCita({
   return (
 
     <div className="cliente-page">
-
-
-      {/* ======================================
-          HEADER
-      ====================================== */}
 
       <header className="header">
 
@@ -119,11 +104,6 @@ export default function FormularioCita({
 
       </header>
 
-
-      {/* ======================================
-          CONTENIDO
-      ====================================== */}
-
       <main className="formulario-cita-container">
 
 
@@ -135,11 +115,6 @@ export default function FormularioCita({
         >
           ← Volver al inmueble
         </button>
-
-
-        {/* ====================================
-            TARJETA
-        ==================================== */}
 
         <div className="formulario-cita-card">
 
@@ -162,11 +137,6 @@ export default function FormularioCita({
             </p>
 
           </div>
-
-
-          {/* ==================================
-              RESUMEN INMUEBLE
-          ================================== */}
 
           <div className="cita-inmueble-resumen">
 
@@ -200,18 +170,10 @@ export default function FormularioCita({
 
           </div>
 
-
-          {/* ==================================
-              FORMULARIO
-          ================================== */}
-
           <form
             onSubmit={enviarSolicitud}
             className="formulario-cita"
           >
-
-
-            {/* NOMBRE */}
 
             <div className="campo-cita">
 
@@ -229,9 +191,6 @@ export default function FormularioCita({
 
             </div>
 
-
-            {/* CORREO */}
-
             <div className="campo-cita">
 
               <label>
@@ -247,9 +206,6 @@ export default function FormularioCita({
               />
 
             </div>
-
-
-            {/* FECHA */}
 
             <div className="campo-cita">
 
@@ -268,9 +224,6 @@ export default function FormularioCita({
               />
 
             </div>
-
-
-            {/* HORA */}
 
             <div className="campo-cita">
 
@@ -326,9 +279,6 @@ export default function FormularioCita({
 
             </div>
 
-
-            {/* MENSAJE */}
-
             <div className="campo-cita campo-mensaje">
 
               <label>
@@ -345,11 +295,6 @@ export default function FormularioCita({
               />
 
             </div>
-
-
-            {/* ==================================
-                BOTONES
-            ================================== */}
 
             <div className="cita-botones">
 
@@ -376,11 +321,6 @@ export default function FormularioCita({
         </div>
 
       </main>
-
-
-      {/* ======================================
-          FOOTER
-      ====================================== */}
 
       <footer className="footer">
 
